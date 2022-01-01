@@ -6,7 +6,7 @@
   <link href="https://weifeng233.github.io/atom.xml" rel="self"/>
   
   <link href="https://weifeng233.github.io/"/>
-  <updated>2021-08-29T15:18:08.920Z</updated>
+  <updated>2022-01-01T12:56:17.977Z</updated>
   <id>https://weifeng233.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>模组集</title>
+    <link href="https://weifeng233.github.io/2022/01/01/%E6%A8%A1%E7%BB%84%E9%9B%86/"/>
+    <id>https://weifeng233.github.io/2022/01/01/%E6%A8%A1%E7%BB%84%E9%9B%86/</id>
+    <published>2022-01-01T10:12:49.659Z</published>
+    <updated>2022-01-01T12:56:17.977Z</updated>
+    
+    <content type="html"><![CDATA[<p>模组集是在2.2.1b85更新中加入的功能。</p><p><img src="/2022/01/01/%E6%A8%A1%E7%BB%84%E9%9B%86/20220101180209.png" alt="20220101180209"></p><h2 id="功能概述"><a href="#功能概述" class="headerlink" title="功能概述"></a>功能概述</h2><p>模组集将一些互相兼容的模组整合为一个整体，通常包含附加代码或者模组以提高模组集成度和游戏玩法一致性。</p><p>在此更新中，模组将无法安装在模组集之外，因此InnerCore会创建一个默认模组集，你可以在其之中找到你之前安装的所有模组并通过模组管理器添加新模组。你可以到模组管理器的<strong>我的模组集</strong>中下载现成的模组集。要加载一个模组集只需要点击模组集页面上的<strong>选择</strong>按钮。</p><p><img src="/2022/01/01/%E6%A8%A1%E7%BB%84%E9%9B%86/20220101183027.png" alt="20220101183027"></p><p>无论何时都只能加载一个模组集。模组集默认到受更改保护，即模组集内的模组不会被模组管理器更新除非模组集有更新，以及你不能向模组集移除或添加模组，如果你尝试这样做会出现如下警告：</p><p><img src="/2022/01/01/%E6%A8%A1%E7%BB%84%E9%9B%86/20220101180729.png" alt="尝试修改一个受保护的模组集"></p><p>只有当你明白你在做什么时才允许修改模组集，当模组集被修改之后，模组集中的模组将开启更新功能，同时模组集会失去更新功能。</p><h2 id="创建你自己的模组集"><a href="#创建你自己的模组集" class="headerlink" title="创建你自己的模组集"></a>创建你自己的模组集</h2><p>你可以基于现有的模组集或默认模组集来创建你自己的模组集。使用模组集页面的<strong>克隆</strong>选项即可完成此工作（在目前版本中，部分设备可能无法克隆默认模组集，下文会讲如何使用文件管理器手动操作）</p><p><img src="/2022/01/01/%E6%A8%A1%E7%BB%84%E9%9B%86/20220101184036.png" alt="20220101184036"></p><p>生成的模组集会在对应的InnerCore包的<em><strong>modpacks</strong></em>文件夹内。接下来你可以使用模组管理器来安装所需的模组，也可以将你自己编写的模组添加到模组集的mods文件夹中。除此之外，你还可以添加模组集图标<em><strong>pack_icon.png</strong></em>，以及必须创建模组集清单文件<em><strong>modpacks.json</strong></em>，其中可包含以下字段：</p><ul><li>name - 模组集的短名称，将会作为其ID</li><li>displayedName - 模组集的展示名称</li><li>versionName - 模组集当前的版本名称</li><li>versionCode - 模组集当前的版本号</li><li>author - 模组集的作者名称</li><li>description - 模组集的简介</li></ul><p>示例：</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;coop-tech&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;displayedName&quot;</span>: <span class="string">&quot;Cooperative Tech&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;versionName&quot;</span>: <span class="string">&quot;1.01-beta​&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;versionCode&quot;</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="attr">&quot;author&quot;</span>: <span class="string">&quot;zheka_smirnov&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;description&quot;</span>: <span class="string">&quot;Simple small modpack, that contains few tech and utility mods and supports multiplayer.&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>一旦模组集构建完成，可以使用模组集界面内的<strong>压缩文件</strong>选项创建一个压缩存档保存在对应InnerCore包的<em><strong>modpacks-archive</strong></em>文件夹内，你可以在模组管理器的模组集页面重装模组集的压缩文档。</p><p><img src="/2022/01/01/%E6%A8%A1%E7%BB%84%E9%9B%86/20220101200640.png" alt="20220101200640"></p><h2 id="模组配置"><a href="#模组配置" class="headerlink" title="模组配置"></a>模组配置</h2><p>首先，你应该知道每个ICMod都有一个<em><strong>config.json</strong></em>文件用于存储的模组的配置信息，在模组集中应将模组的压缩文件统一放在模组集的<em><strong>config</strong></em>文件夹内，并按<em><strong>模组文件夹名-config.json</strong></em>的格式命名（文件夹名称中的空格需要使用-代替），此外，你还可以在该文件夹中创建一个<em><strong>.keep-unchanged</strong></em>文件夹用于存放不允许玩家修改的配置信息。</p><p><em><strong>注意：</strong></em>如果一个模组的配置信息不在config文件夹内时InnerCore会自动创建一个仅包含<em>enabled</em>字段的json文件，此操作可能会使模组无法读取到需要的配置信息而导致报错。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;模组集是在2.2.1b85更新中加入的功能。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/01/01/%E6%A8%A1%E7%BB%84%E9%9B%86/20220101180209.png&quot; alt=&quot;20220101180209&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;功能概</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>使用JavaScript实现的MCBE史莱姆区块算法</title>
