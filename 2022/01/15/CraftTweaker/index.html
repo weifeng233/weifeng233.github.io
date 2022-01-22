@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>CraftTweaker使用教程 | Hexo</title>
+  <meta name="description" content="CraftTweaker（以下简称CrT）是由麦穗开发与同名的Java版模组有类似功能的魔改类模组。 本文将简要介绍如何编写和使用CrT脚本。 加载脚本CrT在运行时会读取当前加载模组集对应文件夹下script文件夹内的所有后缀为js的文件并为每一个脚本创建独立的沙盒以独立运行。 你可以在包对应文件夹内的innercore&#x2F;preferences.json文件中的pack_selected键对应的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CraftTweaker使用教程">
+<meta property="og:url" content="https://weifeng233.github.io/2022/01/15/CraftTweaker/index.html">
+<meta property="og:site_name" content="微风的博客">
+<meta property="og:description" content="CraftTweaker（以下简称CrT）是由麦穗开发与同名的Java版模组有类似功能的魔改类模组。 本文将简要介绍如何编写和使用CrT脚本。 加载脚本CrT在运行时会读取当前加载模组集对应文件夹下script文件夹内的所有后缀为js的文件并为每一个脚本创建独立的沙盒以独立运行。 你可以在包对应文件夹内的innercore&#x2F;preferences.json文件中的pack_selected键对应的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-15T06:40:12.563Z">
+<meta property="article:modified_time" content="2022-01-22T15:50:15.431Z">
+<meta property="article:author" content="SugarBreeze">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://weifeng233.github.io/2022/01/15/CraftTweaker/index.html">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="微风的博客" type="application/atom+xml">
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/weifeng233" target="_blank">
+          <img class="img-circle img-rotate" src="/images/ava.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Sugar Breeze</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">MCBE Modder.</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Henan, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/weifeng233" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/01/15/CraftTweaker/" class="title">CraftTweaker使用教程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-01-15T06:40:12.563Z" itemprop="datePublished">2022-01-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/01/01/%E6%A8%A1%E7%BB%84%E9%9B%86/" class="title">模组集</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-01-01T10:12:49.659Z" itemprop="datePublished">2022-01-01</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/08/29/%E4%BD%BF%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E7%9A%84MCBE%E5%8F%B2%E8%8E%B1%E5%A7%86%E5%8C%BA%E5%9D%97%E7%AE%97%E6%B3%95/" class="title">使用JavaScript实现的MCBE史莱姆区块算法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-08-29T15:11:08.237Z" itemprop="datePublished">2021-08-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/08/14/UI-2/" class="title">UI PART2</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-08-13T17:51:44.941Z" itemprop="datePublished">2021-08-14</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/06/26/UI-1/" class="title">UI PART1</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-06-26T06:57:07.355Z" itemprop="datePublished">2021-06-26</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-CraftTweaker" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CraftTweaker使用教程
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/01/15/CraftTweaker/" class="article-date">
+	  <time datetime="2022-01-15T06:40:12.563Z" itemprop="datePublished">2022-01-15</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/01/15/CraftTweaker/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.2k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>CraftTweaker（以下简称CrT）是由麦穗开发与同名的Java版模组有类似功能的魔改类模组。</p>
+<p>本文将简要介绍如何编写和使用CrT脚本。</p>
+<h2 id="加载脚本"><a href="#加载脚本" class="headerlink" title="加载脚本"></a>加载脚本</h2><p>CrT在运行时会读取<strong>当前加载模组集</strong>对应文件夹下<code>script</code>文件夹内的<strong>所有后缀为js的文件</strong>并为每一个脚本创建独立的沙盒以独立运行。</p>
+<p>你可以在包对应文件夹内的<code>innercore/preferences.json</code>文件中的<code>pack_selected</code>键对应的属性得知当前所加载的模组集对应的路径，无论如何，<code>script</code>文件夹都应与<code>mods</code>文件夹在同一级文件夹内。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可能放置脚本的文件夹</span></span><br><span class="line"><span class="comment">//pack_name/innercore/script/</span></span><br><span class="line"><span class="comment">//mod_pack_name/script/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="编写脚本"><a href="#编写脚本" class="headerlink" title="编写脚本"></a>编写脚本</h2><h3 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h3><p>与<strong>ICMod</strong>一样，CrT脚本使用<strong>Rhino</strong>引擎运行，语言为<strong>JavaScript</strong>，支持ES5与部分ES6特性。</p>
+<h3 id="预置函数"><a href="#预置函数" class="headerlink" title="预置函数"></a>预置函数</h3><p>CrT为CrT脚本提供了两个预置函数，分别为<code>$</code>和<code>require</code>，下文将分别介绍这两个函数的详细用法：</p>
+<h4 id><a href="#" class="headerlink" title="$"></a>$</h4><p><code>$</code>用于创建<code>ItemStack</code>对象，是CrT和ICMod通用的物品格式。</p>
+<h5 id="格式："><a href="#格式：" class="headerlink" title="格式："></a>格式：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// $ 的格式如下</span></span><br><span class="line">$(<span class="string">&quot;type:name:data*count&quot;</span>);</span><br><span class="line"><span class="comment">/* type - ID的类型，分为方块 - block 和 物品 - item</span></span><br><span class="line"><span class="comment"> * name - ID的名称，如bedrock, stick等</span></span><br><span class="line"><span class="comment"> * data - 物品的特殊值/损坏值（可选）</span></span><br><span class="line"><span class="comment"> * count - 物品的数量（可选）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//举例：</span></span><br><span class="line">$(<span class="string">&quot;block:bedrock&quot;</span>); <span class="comment">//基岩</span></span><br><span class="line">$(<span class="string">&quot;block:wool:6*32&quot;</span>); <span class="comment">//半组粉红色羊毛</span></span><br><span class="line">$(<span class="string">&quot;item:stick*64&quot;</span>); <span class="comment">//一组木棍</span></span><br><span class="line">$(<span class="string">&quot;item:diamond_shovel:1560&quot;</span>); <span class="comment">//一把快要坏掉的钻石锹</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ItemStack 对象包含的值如下</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">index</span>: string, <span class="comment">//索引，即ID的名称</span></span><br><span class="line">    <span class="attr">id</span>: number, <span class="comment">//物品的数字ID</span></span><br><span class="line">    <span class="attr">data</span>: number, <span class="comment">//物品的特殊值/损坏值</span></span><br><span class="line">    <span class="attr">count</span>: number, <span class="comment">//物品的数量</span></span><br><span class="line">    <span class="attr">_condition</span>: <span class="function"><span class="keyword">function</span>, //合成条件，物品在工作台中参与合成时执行，详见下文</span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ItemStack 对象有以下方法</span></span><br><span class="line">toItem(); <span class="comment">//返回 toItem 对象，详见下文</span></span><br><span class="line">toBlock(); <span class="comment">//返回 toBlock 对象，详见下文</span></span><br><span class="line">onUse(state); <span class="comment">// state - function 类型，为物品注册使用回调（点击方块时触发），返回该 ItemStack 自身</span></span><br><span class="line">getMaxStack(); <span class="comment">//返回 number 类型，该物品的最大堆叠数量</span></span><br><span class="line">only(state); <span class="comment">// state - function 类型，合成条件，详见下文，返回该 ItemStack 自身</span></span><br><span class="line">transformDamage(damage); <span class="comment">// damage - number 类型，设置物品在合成时增加的损坏值（或指消耗的耐久值），仅调用该方法而不传入参数将设置为1，返回该 ItemStack 自身</span></span><br><span class="line">reuse(); <span class="comment">//设置该物品在合成中不会消耗，返回该 ItemStack 自身</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// toItem 对象有以下方法</span></span><br><span class="line">getMaxDamage(); <span class="comment">//返回 number 类型，该物品的最大特殊值/损坏值</span></span><br><span class="line">isTool(); <span class="comment">//返回 boolean 类型，该物品是否为工具（包含武器，装备等）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// toBlock 对象有以下方法</span></span><br><span class="line">onPlace(state); <span class="comment">// state - function 类型，为方块注册放置回调，返回该 toBlock 自身</span></span><br><span class="line">getTileID(); <span class="comment">//返回 number 类型，该方块的数字ID（范围[0, 2048]）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//回调相关示例，合成相关示例见下文</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//极为经典的铁剑点地爆炸，因为在CrT所创建的沙盒中无法使用CEAPI，因此使用Rhino提供的调用Java的功能直接调用Java方法</span></span><br><span class="line">$(<span class="string">&quot;item:iron_sword&quot;</span>).onUse(<span class="function"><span class="keyword">function</span> (<span class="params">coords, item, block, isExternal, player</span>) </span>&#123;</span><br><span class="line">    com.zhekasmirnov.innercore.api.NativeAPI.explode(coords.x, coords.y, coords.z, <span class="number">10</span>, <span class="literal">true</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//在基岩上放置基岩时爆炸</span></span><br><span class="line">$(<span class="string">&quot;block:bedrock&quot;</span>).toBlock().onPlace(<span class="function"><span class="keyword">function</span> (<span class="params">coords, item, block, player, region</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> pos = coords.relative;</span><br><span class="line">    <span class="keyword">if</span> (!region.getBlock(pos.x, pos.y, pos.z).id) &#123;</span><br><span class="line">    	region.setBlock(pos.x, pos.y, pos.z, $(<span class="string">&quot;block:bedrock&quot;</span>).id, <span class="number">0</span>);</span><br><span class="line">    	<span class="keyword">if</span> (block.id === $(<span class="string">&quot;block:bedrock&quot;</span>).id) &#123;</span><br><span class="line">    		region.explode(pos.x, pos.y + <span class="number">1</span>, pos.z, <span class="number">100</span>, <span class="literal">false</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="require"><a href="#require" class="headerlink" title="require"></a>require</h4><p><code>require</code>可用于获取CrT的自定义API，在没有其他模组添加API的情况下，默认可获取的API有<code>furnace</code>和<code>recipes</code></p>
+<h5 id="格式：-1"><a href="#格式：-1" class="headerlink" title="格式："></a>格式：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;api_name&quot;</span>); <span class="comment">//返回 api_name 对象</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="用法：-1"><a href="#用法：-1" class="headerlink" title="用法："></a>用法：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//因为一般情况下只需要获取一次API对象，而且没有修改名称的必要，故赋值为常量</span></span><br><span class="line"><span class="keyword">const</span> Furnace = <span class="built_in">require</span>(<span class="string">&quot;furnace&quot;</span>); <span class="comment">//CrT预置的熔炉类</span></span><br><span class="line"><span class="keyword">const</span> Recipes = <span class="built_in">require</span>(<span class="string">&quot;recipes&quot;</span>); <span class="comment">//CrT预置的合成类</span></span><br></pre></td></tr></table></figure>
+
+<p>下面将详细介绍<code>furnace</code>和<code>recipes</code>的详细用法</p>
+<h4 id="furnace"><a href="#furnace" class="headerlink" title="furnace"></a>furnace</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//我们已经获取到了 furnace 对象并赋值给 Furnace，为方便，下文均使用 Furnace</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Furnace 有三条函数可用</span></span><br><span class="line">Furnace.remove(input); <span class="comment">// input - ItemStack 类型，输入物品，移除某物品的熔炉配方</span></span><br><span class="line">Furnace.addRecipe(input, output); <span class="comment">// input - ItemStack 类型，输入物品，output - ItemStack 类型，输出物品，添加一条熔炉配方</span></span><br><span class="line">Furnace.setFuel(input, time); <span class="comment">// input - ItemStack 类型，燃料物品，time - number 类型，燃烧时间，设置某物品作为燃料的燃烧时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//举例：</span></span><br><span class="line">Furnace.remove($(<span class="string">&quot;block:iron_ore&quot;</span>)); <span class="comment">//移除铁矿石的熔炉配方</span></span><br><span class="line">Furnace.addRecipe($(<span class="string">&quot;item:rotten_flesh&quot;</span>), $(<span class="string">&quot;item:leather&quot;</span>)); <span class="comment">//经典的腐肉烧皮革</span></span><br><span class="line">Furnace.setFuel($(<span class="string">&quot;block:hay_block&quot;</span>), <span class="number">900</span>); <span class="comment">//将干草块设置为燃料，燃烧时间为4.5个物品</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//注：200燃烧时间为一个物品</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="recipes"><a href="#recipes" class="headerlink" title="recipes"></a>recipes</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//同上，下文均使用Recipes</span></span><br><span class="line"><span class="comment">//至此，我们可以说明上文的一些“详见下文”了</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Recipes 有三条函数可用</span></span><br><span class="line">Recipes.remove(output); <span class="comment">// output - ItemStick 类型，输出物品，移除某物品的合成配方</span></span><br><span class="line">Recipes.addShaped(output, input); <span class="comment">// output - ItemStack 类型，输出物品，input - array 类型，包含输入物品的二维数组，添加有序合成</span></span><br><span class="line">Recipes.addShapeless(output, item); <span class="comment">// output - ItemStack 类型，输出物品，input - array 类型，包含输入物品的一维数组，添加无序合成</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//举例：</span></span><br><span class="line"><span class="comment">//移除工业模组中铜块合成配方（该函数在目前版本的IC暂不可移除原版合成配方）</span></span><br><span class="line">Recipes.remove($(<span class="string">&quot;block:blockCopper&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加基岩的合成配方，摆放方式如下所示</span></span><br><span class="line"><span class="comment"> * ABA</span></span><br><span class="line"><span class="comment"> * BAB</span></span><br><span class="line"><span class="comment"> * ABA</span></span><br><span class="line"><span class="comment"> * 其中 A 代表黑曜石，B 代表石头</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">Recipes.addShaped($(<span class="string">&quot;block:bedrock*3&quot;</span>), [[$(<span class="string">&quot;block:obsidian&quot;</span>), $(<span class="string">&quot;block:stone&quot;</span>), $(<span class="string">&quot;block:obsidian&quot;</span>)], [$(<span class="string">&quot;block:stone&quot;</span>), $(<span class="string">&quot;block:obsidian&quot;</span>), $(<span class="string">&quot;block:stone&quot;</span>)], [$(<span class="string">&quot;block:obsidian&quot;</span>), $(<span class="string">&quot;block:stone&quot;</span>), $(<span class="string">&quot;block:obsidian&quot;</span>)]]);</span><br><span class="line"><span class="comment">//你可以像下面这样写成多行以便阅读</span></span><br><span class="line">Recipes.addShaped($(<span class="string">&quot;block:bedrock*3&quot;</span>), [</span><br><span class="line">    [$(<span class="string">&quot;block:obsidian&quot;</span>), $(<span class="string">&quot;block:stone&quot;</span>), $(<span class="string">&quot;block:obsidian&quot;</span>)],</span><br><span class="line">    [$(<span class="string">&quot;block:stone&quot;</span>), $(<span class="string">&quot;block:obsidian&quot;</span>), $(<span class="string">&quot;block:stone&quot;</span>)],</span><br><span class="line">    [$(<span class="string">&quot;block:obsidian&quot;</span>), $(<span class="string">&quot;block:stone&quot;</span>), $(<span class="string">&quot;block:obsidian&quot;</span>)]</span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//对于不需要放物品的格子，留空或者填null即可</span></span><br><span class="line"><span class="comment">/* 添加用石头合成石镐的合成配方，摆放方式如下所示</span></span><br><span class="line"><span class="comment"> * AAA</span></span><br><span class="line"><span class="comment"> *  B</span></span><br><span class="line"><span class="comment"> *  B</span></span><br><span class="line"><span class="comment"> * 其中 A 代表石头，B 代表木棍</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//如果你有够强迫症可以写这样（虽然对于强迫症我更建议写到一行，眼不见心不烦）</span></span><br><span class="line">Recipes.addShaped($(<span class="string">&quot;item:stone_pickaxe&quot;</span>), [</span><br><span class="line">    [$(<span class="string">&quot;block:stone&quot;</span>), $(<span class="string">&quot;block:stone&quot;</span>), $(<span class="string">&quot;block:stone&quot;</span>)],</span><br><span class="line">    [<span class="literal">null</span>            , $(<span class="string">&quot;item:stick&quot;</span>) , <span class="literal">null</span>            ],</span><br><span class="line">    [<span class="literal">null</span>            , $(<span class="string">&quot;item:stick&quot;</span>) , <span class="literal">null</span>            ]</span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加有不被消耗物品的合成</span></span><br><span class="line"><span class="comment">//使用铁锭和海洋之心合成三叉戟，其中海洋之心可以重复使用</span></span><br><span class="line">Recipes.addShaped($(<span class="string">&quot;item:trident&quot;</span>), [[$(<span class="string">&quot;item:iron_ingot&quot;</span>), $(<span class="string">&quot;item:iron_ingot&quot;</span>), $(<span class="string">&quot;item:iron_ingot&quot;</span>)], [<span class="literal">null</span>, $(<span class="string">&quot;item:heart_of_the_sea&quot;</span>).reuse(), <span class="literal">null</span>], [<span class="literal">null</span>, $(<span class="string">&quot;item:iron_ingot&quot;</span>), <span class="literal">null</span>]]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加无序合成与有序合成的方式十分相像，而且在添加输入物品时可以设置数量（有序合成则只能设置输出物品的数量），但要注意的是输入物品的总数不能超过9个</span></span><br><span class="line"><span class="comment">//截止至V1.1.0版本的CrT，有设置输入物品数量的配方会有部分物品不会消耗的BUG</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//为蘑菇煲添加两条合成配方，使其只需要任意两个蘑菇即可合成</span></span><br><span class="line">Recipes.addShapeless($(<span class="string">&quot;item:mushroom_stew&quot;</span>), [$(<span class="string">&quot;block:brown_mushroom&quot;</span>), $(<span class="string">&quot;block:brown_mushroom&quot;</span>), $(<span class="string">&quot;item:bowl&quot;</span>)]);</span><br><span class="line">Recipes.addShapeless($(<span class="string">&quot;item:mushroom_stew&quot;</span>), [$(<span class="string">&quot;block:red_mushroom&quot;</span>), $(<span class="string">&quot;block:brown_mushroom&quot;</span>), $(<span class="string">&quot;item:bowl&quot;</span>)]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加消耗物品耐久的配方</span></span><br><span class="line"><span class="comment">//使用毒马铃薯合成马铃薯，并消耗剪刀1耐久值</span></span><br><span class="line"><span class="comment">//特殊值-1代表任意特殊值均可</span></span><br><span class="line">Recipes.addShapeless($(<span class="string">&quot;item:potato&quot;</span>), [$(<span class="string">&quot;item:shears:-1&quot;</span>).transformDamage(), $(<span class="string">&quot;item:poisonous_potato&quot;</span>)]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义合成事件</span></span><br><span class="line"><span class="comment">//使用水桶与爆裂紫颂果合成紫颂果，并返还桶</span></span><br><span class="line">Recipes.addShapeless($(<span class="string">&quot;item:chorus_fruit&quot;</span>), [$(<span class="string">&quot;item:chorus_fruit_popped&quot;</span>), $(<span class="string">&quot;item:water_bucket&quot;</span>).only(<span class="function"><span class="keyword">function</span> (<span class="params">api, index, item, output</span>) </span>&#123;</span><br><span class="line">    item.id = $(<span class="string">&quot;item:bucket&quot;</span>).id;</span><br><span class="line">&#125;)]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//木板与剪刀合成随机1-4根木棍并消耗剪刀相应的耐久值</span></span><br><span class="line">Recipes.addShapeless($(<span class="string">&quot;item:stick&quot;</span>), [$(<span class="string">&quot;block:planks&quot;</span>), $(<span class="string">&quot;item:shears:-1&quot;</span>).only(<span class="function"><span class="keyword">function</span> (<span class="params">api, index, item, output</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> count = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">4</span>) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> max = $(<span class="string">&quot;item:shears&quot;</span>).toItem().getMaxDamage();</span><br><span class="line">    item.data += count;</span><br><span class="line">    <span class="keyword">if</span> (item.data &gt;= max) &#123;</span><br><span class="line">        count += max - item.data;</span><br><span class="line">        item.id = item.data = item.count = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    output.count = count;</span><br><span class="line">&#125;)]);</span><br></pre></td></tr></table></figure>
+
+<h2 id="模组联动"><a href="#模组联动" class="headerlink" title="模组联动"></a>模组联动</h2><p>如果你是模组开发者，你可以通过<code>ModAPI</code>调用CrT提供的方法来拓展CrT</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//CrT有以下方法可以通过ModAPI调用</span></span><br><span class="line">addAPI(name, state); <span class="comment">// name - string 类型，API名称，state - object 类型，API对象，像CrT添加自定义API以在脚本中使用</span></span><br><span class="line"><span class="built_in">require</span>(name); <span class="comment">// name - string 类型，API名称，同上文require</span></span><br><span class="line">requireGlobal(command); <span class="comment">// command - string 类型，要执行的代码，在CrT的中执行一段代码，慎用</span></span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>好了，你已经学会如何使用CrT了，快去试着制作整合包吧！</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://weifeng233.github.io/2022/01/15/CraftTweaker/" title="CraftTweaker使用教程" target="_blank" rel="external">https://weifeng233.github.io/2022/01/15/CraftTweaker/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/weifeng233" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/ava.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/weifeng233" target="_blank"><span class="text-dark">Sugar Breeze</span><small class="ml-1x">MCBE Modder.</small></a></h3>
+        <div>这个好像是自我介绍，那就这样吧</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/01/01/%E6%A8%A1%E7%BB%84%E9%9B%86/" title="模组集"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/weifeng233" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
