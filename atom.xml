@@ -6,7 +6,7 @@
   <link href="https://weifeng233.github.io/atom.xml" rel="self"/>
   
   <link href="https://weifeng233.github.io/"/>
-  <updated>2022-01-22T15:50:15.431Z</updated>
+  <updated>2022-04-07T16:45:12.887Z</updated>
   <id>https://weifeng233.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于InnerCore包</title>
+    <link href="https://weifeng233.github.io/2022/04/07/%E5%85%B3%E4%BA%8EInnerCore%E5%8C%85/"/>
+    <id>https://weifeng233.github.io/2022/04/07/%E5%85%B3%E4%BA%8EInnerCore%E5%8C%85/</id>
+    <published>2022-04-07T12:42:10.438Z</published>
+    <updated>2022-04-07T16:45:12.887Z</updated>
+    
+    <content type="html"><![CDATA[<p>注：本文翻译自<a href="https://docs.mineprogramming.org/#/en/page/apps/horizon/packs">官方文档</a>，UI文本与<a href="https://gitlab.com/zhekasmirnov/horizon-cloud-config/-/commit/3632102ba431ba23c09374117b077af9b756e773#80bd4c0508d1d611d9ac5282791e8bebf5656c81">InnerCore b113</a>一致</p><h2 id="这个包有什么？"><a href="#这个包有什么？" class="headerlink" title="这个包有什么？"></a>这个包有什么？</h2><p>在InnerCore包的主菜单中有以下五个按钮：</p><ol><li><strong>游玩</strong> - 用于开始游戏的按钮</li><li><strong>原生模组</strong> - 位于屏幕右侧用于打开原生模组菜单的按钮</li><li><strong>模组管理器</strong> - 此游戏的模组管理器<ol><li>下载模组 - 允许你任意下载模组</li><li>我的模组 - 用于管理你已安装的模组</li><li>我的模组集 - 管理已安装的由开发者创作的现成整合包</li><li>模组更新 - 可更新的模组列表</li><li>访问网站 - 打开此游戏的一个成熟的模组网站</li></ol></li><li><strong>首选项和链接</strong><ol><li>首选项<ol><li><strong>禁用加载屏幕</strong> - 显示正在加载模组的页面，在某些设备上禁用后可能会提升加载速度</li><li><strong>开发人员模式</strong> - 对模组开发者相当实用，包括在支持的模组中启用调试模式</li><li><strong>使用旧版工作台 UI</strong> - 如果原版工作台对于一些配方无效，则可以恢复至之前的工作台UI</li><li><strong>基于时间限制更新</strong> - 开启后，模组在一游戏刻中产生的最大更新数量将被限制，否则将无限制，简单说就是模组每刻最多能调用的次数</li><li><strong>每刻最大的更新次数</strong> - 调整_更新次数限制_</li><li><strong>建立高级线程优先级</strong> - 更高的优先级可使TPS更稳定（这意味着更稳定的操作和响应时间），但可能会冻结线程和降低帧率</li><li><strong>服务端线程优先级</strong> - 调整_线程优先级_</li><li><strong>FPS阈值</strong> - 当FPS低于该阈值时，将会降低服务端线程优先级</li><li><strong>更多的线程数</strong> - 额外的更新线程，对于性能较强的设备上可以提升负载性能，注意，该功能仍处于实验性阶段，可能会不稳定</li><li><strong>更多的线程优先级</strong> - 调整_额外线程的优先级_</li><li><strong>自动保存</strong> - 允许你在游戏意外停止运行时保存存档和模组数据</li><li><strong>自动保存优先级</strong> - 两次保存之间间隔的秒数</li><li><strong>启用套接字服务器</strong> - 允许局域网内的玩家通过Socket协议进入你的世界</li><li><strong>优先化本地网络协议</strong> - 使用原生协议（默认情况下Socket协议有更高的优先级）</li><li><strong>（开发人员用）强制本地化本地协议</strong> - 使用原生协议进行本地客户端与服务端的通信，该选项仅用于调试模组，<strong>切勿在正常游戏中使用！</strong></li><li><strong>(For developers)Dump additional information</strong> - 在世界加载期间导出与开发相关的信息，dump文件会与log放在相同文件夹</li></ol></li><li>指南和链接 - 包含指南和社交网络链接的标签页</li><li>开发小组 - 开发者，测试员和模组开发者的贡献名单</li><li>关于</li></ol></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;注：本文翻译自&lt;a href=&quot;https://docs.mineprogramming.org/#/en/page/apps/horizon/packs&quot;&gt;官方文档&lt;/a&gt;，UI文本与&lt;a href=&quot;https://gitlab.com/zhekasmirnov/hor</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>CraftTweaker使用教程</title>
