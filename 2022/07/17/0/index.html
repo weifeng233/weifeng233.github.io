@@ -26,7 +26,7 @@
 <meta property="og:description" content="本文是ICMod开发教程的第0章，主要内容为模组结构，编程语言和库，适用版本为InnerCore 2.x（在玩家社区中通常以Horizon指代），注意发布时间。 模组结构ICMod是以文件夹的形式放在对应InnerCore包下的innercore&#x2F;mods文件夹，在发布时以ZIP格式的压缩包并通常使用.icmod作为文件后缀。 在ICMod中，许多文件的相对位置和名称都可以在build.confi">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-17T11:00:33.475Z">
-<meta property="article:modified_time" content="2022-07-17T11:02:25.512Z">
+<meta property="article:modified_time" content="2022-07-17T13:19:56.560Z">
 <meta property="article:author" content="SugarBreeze">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -299,7 +299,7 @@
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;buildDirs&quot;</span>:[</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">&quot;dir&quot;</span>:<span class="string">&quot;source/dev/&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;targetSource&quot;</span>:<span class="string">&quot;source/main.js&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
 
 <p><code>dir</code>指定了可执行文件存放的文件夹，此文件夹内必须有一个<code>includes</code>文件逐行记录了各个文件的相对位置，InnerCore将会按顺序合并为一个文件并覆写到<code>targetSource</code>指定的文件中。此过程并非简单的文本拼接，不可将完整的代码文件随意拆分为两个文件，否则可能会导致错误。</p>
-<h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><p>ICMod主要使用的变成语言是JavaScript，使用Rhino作为引擎，支持ES5和极少一部分ES6特性和调用Java，主要劣势为运行速度相当慢，与主流JS引擎相差百倍，但对于大多数情况都是够用的。这里推荐几个JS学习资源：</p>
+<h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><p>ICMod主要使用的编程语言是JavaScript，使用Rhino作为引擎，支持ES5和极少一部分ES6特性和调用Java，主要劣势为运行速度相当慢，与主流JS引擎相差百倍，但对于大多数情况都是够用的。这里推荐几个JS学习资源：</p>
 <p><a target="_blank" rel="noopener" href="https://wizardforcel.gitbooks.io/eloquent-js-3e/content/">JavaScript编程精解</a>，相当不错的入门书籍。</p>
 <p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript">JavaScript | MDN</a>，权威且全面，页面内还附有其他资源链接。</p>
 <p><a target="_blank" rel="noopener" href="https://mozilla.github.io/rhino/compat/engines.html">Rhino ES2015 Support</a>，关于Rhino引擎对于ES6特性的实际支持情况。</p>
