@@ -6,7 +6,7 @@
   <link href="https://weifeng233.github.io/atom.xml" rel="self"/>
   
   <link href="https://weifeng233.github.io/"/>
-  <updated>2022-07-17T13:19:56.560Z</updated>
+  <updated>2022-07-20T17:49:52.273Z</updated>
   <id>https://weifeng233.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在Horizon使用ZeroTier进行多人游戏</title>
+    <link href="https://weifeng233.github.io/2022/07/21/mutiplayer-in-horizon/"/>
+    <id>https://weifeng233.github.io/2022/07/21/mutiplayer-in-horizon/</id>
+    <published>2022-07-20T17:46:48.363Z</published>
+    <updated>2022-07-20T17:49:52.273Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先下载<a href="https://github.com/kaaass/ZerotierFix/releases/download/1.0.5_189/1.0.5_189.apk">ZeroTier</a>，如果打不开可以用<a href="https://hub.fastgit.xyz/kaaass/ZerotierFix/releases/download/1.0.5_189/1.0.5_189.apk">镜像</a>。</p><p>然后到<a href="https://www.zerotier.com/">ZeroTier官网</a>注册账号，接着去<a href="https://my.zerotier.com/network">创建一个网络</a>，点击<strong>Create A Network</strong>按钮然后复制<strong>NETWORK ID</strong>即可</p><p><img src="/2022/07/21/mutiplayer-in-horizon/1.png" alt="image-20220720234616437"></p><p>之后进入网络设置将访问控制更改为公共（你也可以选择私人，但那样每有新人加入时就需要手动在该页面同意），你也可以顺便改个名字</p><p><img src="/2022/07/21/mutiplayer-in-horizon/2.png" alt="image-20220721000234346"></p><p>然后在手机上打开<strong>ZeroTier Fix</strong>，进行极其简单的操作：</p><p><img src="/2022/07/21/mutiplayer-in-horizon/3.png" alt="image-20220721001124851"></p><p>然后进入游戏即可与普通的局域网联机一样了</p><p><img src="/2022/07/21/mutiplayer-in-horizon/4.png" alt="image-20220721014212117"></p><p><img src="/2022/07/21/mutiplayer-in-horizon/5.png" alt="MuMu20220721013920"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;首先下载&lt;a href=&quot;https://github.com/kaaass/ZerotierFix/releases/download/1.0.5_189/1.0.5_189.apk&quot;&gt;ZeroTier&lt;/a&gt;，如果打不开可以用&lt;a href=&quot;https://hub.f</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>内核课程 - 0：模组结构、编程语言和库</title>
