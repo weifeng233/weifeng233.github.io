@@ -17,20 +17,20 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>使用JavaScript实现的MCBE史莱姆区块算法 | Hexo</title>
-  <meta name="description" content="直接将origin0110使用C的代码简单地用JS写一遍，在此记录： 2022&#x2F;1&#x2F;12：减少不必要的转无符号运算 12345678910111213141516171819function getSeed(x, z) &amp;#123;	return x * 0x1f1f1f1f ^ z;&amp;#125;function isSlimeChunk(s) &amp;#123;	let m &#x3D; 1 + Math.im">
+  <title>一些关于InnerCore的闲话 | Hexo</title>
+  <meta name="description" content="阅前提醒：本文仅为个人观点，是否具有参考价值由读者自行判断。 能看到这篇文章的人应该都知道InnerCore和Horizon是什么了，就不再赘述了。那么先按常例简单梳理一下发展史，首先InnerCore是Zheka基于CoreEngine开发的一款适用于安卓平台上PE&#x2F;BE版MC的模组启动器，而CoreEngine则是由Factorzation的FactAPI发展而来，运行在著名的方块启动器上。而">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用JavaScript实现的MCBE史莱姆区块算法">
-<meta property="og:url" content="https://weifeng233.github.io/2021/08/29/%E4%BD%BF%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E7%9A%84MCBE%E5%8F%B2%E8%8E%B1%E5%A7%86%E5%8C%BA%E5%9D%97%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="一些关于InnerCore的闲话">
+<meta property="og:url" content="https://weifeng233.github.io/2023/02/19/%E6%97%A0%E7%94%A8%E9%97%B2%E8%AF%9D/index.html">
 <meta property="og:site_name" content="微风的博客">
-<meta property="og:description" content="直接将origin0110使用C的代码简单地用JS写一遍，在此记录： 2022&#x2F;1&#x2F;12：减少不必要的转无符号运算 12345678910111213141516171819function getSeed(x, z) &amp;#123;	return x * 0x1f1f1f1f ^ z;&amp;#125;function isSlimeChunk(s) &amp;#123;	let m &#x3D; 1 + Math.im">
+<meta property="og:description" content="阅前提醒：本文仅为个人观点，是否具有参考价值由读者自行判断。 能看到这篇文章的人应该都知道InnerCore和Horizon是什么了，就不再赘述了。那么先按常例简单梳理一下发展史，首先InnerCore是Zheka基于CoreEngine开发的一款适用于安卓平台上PE&#x2F;BE版MC的模组启动器，而CoreEngine则是由Factorzation的FactAPI发展而来，运行在著名的方块启动器上。而">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-29T15:11:08.237Z">
-<meta property="article:modified_time" content="2022-01-11T16:53:28.415Z">
+<meta property="article:published_time" content="2023-02-18T16:35:06.127Z">
+<meta property="article:modified_time" content="2023-02-18T16:37:15.148Z">
 <meta property="article:author" content="SugarBreeze">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://weifeng233.github.io/2021/08/29/%E4%BD%BF%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E7%9A%84MCBE%E5%8F%B2%E8%8E%B1%E5%A7%86%E5%8C%BA%E5%9D%97%E7%AE%97%E6%B3%95/index.html">
+  <link rel="canonical" href="https://weifeng233.github.io/2023/02/19/%E6%97%A0%E7%94%A8%E9%97%B2%E8%AF%9D/index.html">
   
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -237,14 +237,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-使用JavaScript实现的MCBE史莱姆区块算法" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-无用闲话" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      使用JavaScript实现的MCBE史莱姆区块算法
+      一些关于InnerCore的闲话
     </h1>
   
 
@@ -252,8 +252,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/08/29/%E4%BD%BF%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E7%9A%84MCBE%E5%8F%B2%E8%8E%B1%E5%A7%86%E5%8C%BA%E5%9D%97%E7%AE%97%E6%B3%95/" class="article-date">
-	  <time datetime="2021-08-29T15:11:08.237Z" itemprop="datePublished">2021-08-29</time>
+	<a href="/2023/02/19/%E6%97%A0%E7%94%A8%E9%97%B2%E8%AF%9D/" class="article-date">
+	  <time datetime="2023-02-18T16:35:06.127Z" itemprop="datePublished">2023-02-19</time>
 	</a>
 </span>
         
@@ -261,24 +261,26 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/08/29/%E4%BD%BF%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E7%9A%84MCBE%E5%8F%B2%E8%8E%B1%E5%A7%86%E5%8C%BA%E5%9D%97%E7%AE%97%E6%B3%95/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/02/19/%E6%97%A0%E7%94%A8%E9%97%B2%E8%AF%9D/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 132(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.3k(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>直接将origin0110使用C的<a target="_blank" rel="noopener" href="https://github.com/origin0110/SlimeChunkFinder/blob/main/slimechunkfinder.c">代码</a>简单地用JS写一遍，在此记录：</p>
-<p>2022/1/12：减少不必要的转无符号运算</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSeed</span>(<span class="params">x, z</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x * <span class="number">0x1f1f1f1f</span> ^ z;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isSlimeChunk</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> m = <span class="number">1</span> + <span class="built_in">Math</span>.imul(s ^ s &gt;&gt;&gt; <span class="number">30</span>, <span class="number">0x6c078965</span>);</span><br><span class="line">	s = s &amp; <span class="number">0x80000000</span> | m &amp; <span class="number">0x7fffffff</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt; <span class="number">398</span>; i++)</span><br><span class="line">		m = i + <span class="built_in">Math</span>.imul(m ^ m &gt;&gt;&gt; <span class="number">30</span>, <span class="number">0x6c078965</span>);</span><br><span class="line"></span><br><span class="line">	m ^= (s &gt;&gt;&gt; <span class="number">1</span>) ^ (s &amp; <span class="number">1</span> ? <span class="number">0x9908b0df</span> : <span class="number">0x0</span>);</span><br><span class="line"></span><br><span class="line">	m ^= m &gt;&gt;&gt; <span class="number">11</span>;</span><br><span class="line">	m ^= m &lt;&lt; <span class="number">0x7</span> &amp; <span class="number">0x9d2c5680</span>;</span><br><span class="line">	m ^= m &lt;&lt; <span class="number">0xf</span> &amp; <span class="number">0xefc60000</span>;</span><br><span class="line">	m ^= m &gt;&gt;&gt; <span class="number">18</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> !((m &gt;&gt;&gt; <span class="number">0</span>) % <span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+        <p>阅前提醒：本文仅为个人观点，是否具有参考价值由读者自行判断。</p>
+<p>能看到这篇文章的人应该都知道InnerCore和Horizon是什么了，就不再赘述了。那么先按常例简单梳理一下发展史，首先InnerCore是Zheka基于CoreEngine开发的一款适用于安卓平台上PE/BE版MC的模组启动器，而CoreEngine则是由Factorzation的FactAPI发展而来，运行在著名的方块启动器上。而Horizon是Zheka为了规避Play商店的限制和方便更新InnerCore而开发的一个实例化启动器，或者说是一个“游戏启动器平台”，但按当前的情况来看，但实现后者是一件遥不可及的事情，毕竟除了人力物力的支持外，还难免会涉及版权纠纷。<br>但是鉴于已经有相当多的人将Horizon与新版InnerCore画上等号，那么相比大部分人应该都不怎么担心Horizon会怎么样，只会关注InnerCore的游玩体验之类的事情，那么无论再怎么画饼也不会有人被吸引的。</p>
+<p>说回InnerCore，现在InnerCore给人的第一印象相比只有三个字“不稳定”，再其次就是“卡顿”，“优化差”，“版本落后”，“不如网易”等批评，而且确实难以反驳。但是不能将这些问题简单地都推给引擎，还有两个重要因素值得注意，一是InnerCore的开发社区实在是太小了，人数最多的开发社区当属俄国（这么说并不能全部包括，或许应该叫前苏联地区233）和中国，但规模都在几十人且活跃者均为个位数，而且在这种甚至情况下还分生出了一些互相存在些许矛盾的小团体（嘛，其实也完全可以理解，毕竟人的方向和观念都是自由的），至于其他的国家或地区那就更是屈指可数了，这就导致了至今ICMod的开发还很不成熟，没有多少稳定可靠的轮子可用，而且有些比较基本的东西都还没有打成一个一致的标准（比如说经典UI和矿辞，都是有望通过开发社区交流合作来实现的）。</p>
+<p>二是微软对第三方启动器的打压，虽然没有表现在明面上，但很多操作都可以证实，比如说封禁帐号和删除符号，前者是在警示玩家不要使用第三方启动器（当然，确实有反作弊的目的，但当时的封禁标准是针对安卓上的第三方启动器如方块启动器，Toolbox设计的，因为服务器作弊的大头在Win10平台上），后者则是阻碍第三方启动器的开发者对新版本的适配。所以我个人是对InnerCore适配新版本不抱任何希望了，但对于模组玩家来说，这并非是不能接受的事情。</p>
+<p>但是我并不认为InnerCore就应该就此被遗弃，因为InnerCore以上的劣势都是由它最大的优势导致的——InnerCore是一个第三方模组API，这意味着开发者有足够的接口和权限去做几乎任何他们想做的事情（前提是不只是拘束在CoreEngineAPI当中），我可以断言，Mojang和网易的模组API永远不可能允许开发者有完全自由的文件读写权限和系统权限，当然这是因为这会给玩家带来很大的安全隐患，但这取决于开发者，Java版的模组引擎比如Forge，Fabric也有同样甚至更高的自由度，但恶意模组的事件不算多。如果第三方模组在基岩版彻底灭绝，全靠坐等官方开放的官方模组API，那么基岩版模组是不会有与Java版模组抗衡的时候的（虽然我个人觉得和Java版比意义不大就是了）。总之无论如何，我都会坚持支持第三方模组API。</p>
+<p>再说点题外话，目前基岩版的官方模组API都是数据驱动+服务端脚本的模式，而InnerCore是客户端与服务端函数和回调混合的模式，直接比较两种不同的模式（或者叫“范式”）是不合适的，但就和面向过程和面向对象一样，都有其显优势的情况。我个人认为官方模组API的模式比较适合开发那些大体量但同质化较高和重视觉表现轻功能的模组，而InnerCore适合开发内容耦合性较高和拥有复杂逻辑的模组，虽然现在的环境是基本上都以前者为主，后者无论在基岩版和Java版都相当少见（但质量基本上都很高）。不过这都是相当理想的想法了，在现实中谁说要在InnerCore开发像机械动力那样的模组估计要么收获一些质疑要么被推荐去网易。另外比如Pojav，HMCLPE这些安卓平台上的Java版启动器我个人认为与InnerCore是不在同一条赛道上的，不能互相比较，谁优谁劣的争论是无意义的。</p>
+<p align="right">Vanilla Survival Player</p>
       
     </div>
     <div class="article-footer">
@@ -287,7 +289,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://weifeng233.github.io/2021/08/29/%E4%BD%BF%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E7%9A%84MCBE%E5%8F%B2%E8%8E%B1%E5%A7%86%E5%8C%BA%E5%9D%97%E7%AE%97%E6%B3%95/" title="使用JavaScript实现的MCBE史莱姆区块算法" target="_blank" rel="external">https://weifeng233.github.io/2021/08/29/使用JavaScript实现的MCBE史莱姆区块算法/</a>
+      <a href="https://weifeng233.github.io/2023/02/19/%E6%97%A0%E7%94%A8%E9%97%B2%E8%AF%9D/" title="一些关于InnerCore的闲话" target="_blank" rel="external">https://weifeng233.github.io/2023/02/19/无用闲话/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -333,13 +335,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/01/01/%E6%A8%A1%E7%BB%84%E9%9B%86/" title="模组集"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2021/08/14/UI-2/" title="UI PART2"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/08/03/CoreUtility/" title="Core Utility（渣翻预警）"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
