@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weifeng233.github.io/2024/02/17/%E5%8D%8A%E5%B0%8F%E6%97%B6%E9%80%9F%E9%80%9ARust/</loc>
+    
+    <lastmod>2024-02-16</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weifeng233.github.io/2023/06/09/%E9%A6%99%E8%8D%89%E9%A3%8E%E6%A0%BC%E6%A8%A1%E7%BB%84%E6%8C%87%E5%8D%97/</loc>
     
     <lastmod>2023-06-09</lastmod>
@@ -81,7 +88,7 @@
 
   <url>
     <loc>https://weifeng233.github.io/</loc>
-    <lastmod>2023-06-09</lastmod>
+    <lastmod>2024-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
