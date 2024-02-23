@@ -17,20 +17,22 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>使用JavaScript实现的MCBE史莱姆区块算法 | Hexo</title>
-  <meta name="description" content="直接将origin0110使用C的代码简单地用JS写一遍，在此记录： 2022&#x2F;1&#x2F;12：减少不必要的转无符号运算 12345678910111213141516171819function getSeed(x, z) &amp;#123;	return x * 0x1f1f1f1f ^ z;&amp;#125;function isSlimeChunk(s) &amp;#123;	let m &#x3D; 1 + Math.im">
+  <title>InnerCore 第三方服务端 Zote Core 介绍 | Hexo</title>
+  <meta name="description" content="Zote Core Loader介绍Zore Core 是一个基于 InnerCore 1.16.200 的服务器核心，设计用于提供独特的模组游戏体验。该服务器核心基于Nukkit-MOT ，它可以非常容易地通过替换对应的库来更新。 安装任何支持 Java 17 以及更高版本的平台均可使用。只需要下载该服务器的最新版本或者使用 Gradle创建项目即可。要运行该可信，只需要在终端中打开其所在的文件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用JavaScript实现的MCBE史莱姆区块算法">
-<meta property="og:url" content="https://weifeng233.github.io/2021/08/29/%E4%BD%BF%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E7%9A%84MCBE%E5%8F%B2%E8%8E%B1%E5%A7%86%E5%8C%BA%E5%9D%97%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="InnerCore 第三方服务端 Zote Core 介绍">
+<meta property="og:url" content="https://weifeng233.github.io/2024/01/18/zote-core-loader/index.html">
 <meta property="og:site_name" content="微风的博客">
-<meta property="og:description" content="直接将origin0110使用C的代码简单地用JS写一遍，在此记录： 2022&#x2F;1&#x2F;12：减少不必要的转无符号运算 12345678910111213141516171819function getSeed(x, z) &amp;#123;	return x * 0x1f1f1f1f ^ z;&amp;#125;function isSlimeChunk(s) &amp;#123;	let m &#x3D; 1 + Math.im">
+<meta property="og:description" content="Zote Core Loader介绍Zore Core 是一个基于 InnerCore 1.16.200 的服务器核心，设计用于提供独特的模组游戏体验。该服务器核心基于Nukkit-MOT ，它可以非常容易地通过替换对应的库来更新。 安装任何支持 Java 17 以及更高版本的平台均可使用。只需要下载该服务器的最新版本或者使用 Gradle创建项目即可。要运行该可信，只需要在终端中打开其所在的文件">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-29T15:11:08.237Z">
-<meta property="article:modified_time" content="2022-01-11T16:53:28.415Z">
+<meta property="og:image" content="https://weifeng233.github.io/2024/01/18/zote-core-loader/Zote%20Core%20Loader/Pasted%20image%2020240118152244.jpg">
+<meta property="article:published_time" content="2024-01-18T07:41:04.712Z">
+<meta property="article:modified_time" content="2024-02-23T07:24:50.206Z">
 <meta property="article:author" content="SugarBreeze">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://weifeng233.github.io/2024/01/18/zote-core-loader/Zote%20Core%20Loader/Pasted%20image%2020240118152244.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://weifeng233.github.io/2021/08/29/%E4%BD%BF%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E7%9A%84MCBE%E5%8F%B2%E8%8E%B1%E5%A7%86%E5%8C%BA%E5%9D%97%E7%AE%97%E6%B3%95/index.html">
+  <link rel="canonical" href="https://weifeng233.github.io/2024/01/18/zote-core-loader/index.html">
   
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -237,14 +239,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-使用JavaScript实现的MCBE史莱姆区块算法" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-zote-core-loader" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      使用JavaScript实现的MCBE史莱姆区块算法
+      InnerCore 第三方服务端 Zote Core 介绍
     </h1>
   
 
@@ -252,8 +254,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/08/29/%E4%BD%BF%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E7%9A%84MCBE%E5%8F%B2%E8%8E%B1%E5%A7%86%E5%8C%BA%E5%9D%97%E7%AE%97%E6%B3%95/" class="article-date">
-	  <time datetime="2021-08-29T15:11:08.237Z" itemprop="datePublished">2021-08-29</time>
+	<a href="/2024/01/18/zote-core-loader/" class="article-date">
+	  <time datetime="2024-01-18T07:41:04.712Z" itemprop="datePublished">2024-01-18</time>
 	</a>
 </span>
         
@@ -261,23 +263,63 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/08/29/%E4%BD%BF%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E7%9A%84MCBE%E5%8F%B2%E8%8E%B1%E5%A7%86%E5%8C%BA%E5%9D%97%E7%AE%97%E6%B3%95/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2024/01/18/zote-core-loader/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 132(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 908(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>直接将origin0110使用C的<a target="_blank" rel="noopener" href="https://github.com/origin0110/SlimeChunkFinder/blob/main/slimechunkfinder.c">代码</a>简单地用JS写一遍，在此记录：</p>
-<p>2022/1/12：减少不必要的转无符号运算</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSeed</span>(<span class="params">x, z</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x * <span class="number">0x1f1f1f1f</span> ^ z;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isSlimeChunk</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> m = <span class="number">1</span> + <span class="built_in">Math</span>.imul(s ^ s &gt;&gt;&gt; <span class="number">30</span>, <span class="number">0x6c078965</span>);</span><br><span class="line">	s = s &amp; <span class="number">0x80000000</span> | m &amp; <span class="number">0x7fffffff</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt; <span class="number">398</span>; i++)</span><br><span class="line">		m = i + <span class="built_in">Math</span>.imul(m ^ m &gt;&gt;&gt; <span class="number">30</span>, <span class="number">0x6c078965</span>);</span><br><span class="line"></span><br><span class="line">	m ^= (s &gt;&gt;&gt; <span class="number">1</span>) ^ (s &amp; <span class="number">1</span> ? <span class="number">0x9908b0df</span> : <span class="number">0x0</span>);</span><br><span class="line"></span><br><span class="line">	m ^= m &gt;&gt;&gt; <span class="number">11</span>;</span><br><span class="line">	m ^= m &lt;&lt; <span class="number">0x7</span> &amp; <span class="number">0x9d2c5680</span>;</span><br><span class="line">	m ^= m &lt;&lt; <span class="number">0xf</span> &amp; <span class="number">0xefc60000</span>;</span><br><span class="line">	m ^= m &gt;&gt;&gt; <span class="number">18</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> !((m &gt;&gt;&gt; <span class="number">0</span>) % <span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="Zote-Core-Loader介绍"><a href="#Zote-Core-Loader介绍" class="headerlink" title="Zote Core Loader介绍"></a>Zote Core Loader介绍</h1><p><strong>Zore Core</strong> 是一个基于 InnerCore 1.16.200 的服务器核心，设计用于提供独特的模组游戏体验。<br>该服务器核心基于<a target="_blank" rel="noopener" href="https://github.com/MemoriesOfTime/Nukkit-MOT">Nukkit-MOT</a> ，它可以非常容易地通过替换对应的库来更新。<br><img src="/2024/01/18/zote-core-loader/Zote%20Core%20Loader/Pasted%20image%2020240118152244.jpg"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>任何支持 Java 17 以及更高版本的平台均可使用。只需要下载该服务器的最新版本或者使用 Gradle创建项目即可。<br>要运行该可信，只需要在终端中打开其所在的文件夹并执行以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar ZoteCore-SNAPSHOT.jar</span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>服务器的设置主要通过以下三个文件：<em>server.properties</em> 和 <em>zotecore.yml</em>。它们会在核心启动后被自动创建，前两个文件的文档可以在 Nukkit 的仓库中找到。</p>
+<blockquote>
+<p>一些 Nukkit 的设置是被引导程序锁死的，包括 multiversion-min/max-protocol (422), xbox-auth (微软账号认证目前不可用) 和 save-player-data-by-uuid (false).</p>
+</blockquote>
+<h3 id="zotecore-yml"><a href="#zotecore-yml" class="headerlink" title="zotecore.yml"></a>zotecore.yml</h3><p>标准的基本内核设置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 客户端要进入服务器所需要的包的信息</span></span><br><span class="line"><span class="comment"># 过时或未实现的版本不会被添加</span></span><br><span class="line"><span class="attr">pack:</span> <span class="string">Inner</span> <span class="string">Core</span> <span class="string">Test</span></span><br><span class="line"><span class="attr">pack-version:</span> <span class="number">2.3</span><span class="string">.0b115</span> <span class="string">test</span></span><br><span class="line"><span class="attr">pack-version-code:</span> <span class="number">152</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置要加载的模组集，你可以指定模组集名称或模组集相对于 /modpacks 的文件夹名称或路径</span></span><br><span class="line"><span class="attr">modpack:</span> <span class="string">innercore</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用原版工作台界面替换自定义的版本</span></span><br><span class="line"><span class="comment"># 警告：目前尚不支持，自定义的合成配方将不会被展示</span></span><br><span class="line"><span class="attr">use-legacy-workbench-override:</span> <span class="string">on</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 禁用对已连接的服务端的背包修正</span></span><br><span class="line"><span class="comment"># 旧版不能与其正常工作，会使物品无法在背包中移动</span></span><br><span class="line"><span class="attr">use-legacy-inventory:</span> <span class="string">on</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换调试模式以用于不支持的方法（例如客户端方法）</span></span><br><span class="line"><span class="comment"># 可选的值有：none, debug (默认), warning, raise</span></span><br><span class="line"><span class="attr">unsupported-method-handling:</span> <span class="string">debug</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 模组是否可以使用不安全的函数 (例如eval)</span></span><br><span class="line"><span class="comment"># 警告：可能会制造安全风险</span></span><br><span class="line"><span class="comment"># 但是通常它会影响 requireGlobal 从而导致模组出现问题</span></span><br><span class="line"><span class="attr">allow-unsafe-scripting:</span> <span class="string">on</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开发者模式允许你获关于内核操作的更多信息</span></span><br><span class="line"><span class="attr">developer-mode:</span> <span class="string">off</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动保存模组数据的时间间隔(秒)</span></span><br><span class="line"><span class="attr">auto-save-period:</span> <span class="number">60</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动存档</span></span><br><span class="line"><span class="attr">auto-save-world:</span> <span class="string">on</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 无论 socket 服务器是否启用，socket 都额外需要一个端口</span></span><br><span class="line"><span class="comment"># 通过 socket 连接服务器相对更稳定</span></span><br><span class="line"><span class="attr">socket-server-enable:</span> <span class="string">on</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># socket 端口，通常应在 10000 至 24999</span></span><br><span class="line"><span class="comment"># 但请注意客户端默认使用 2304</span></span><br><span class="line"><span class="attr">socket-port:</span> <span class="number">2304</span></span><br></pre></td></tr></table></figure>
+<h2 id="控制台命令"><a href="#控制台命令" class="headerlink" title="控制台命令"></a>控制台命令</h2><ul>
+<li>custom_items - 显示自定义物品列表</li>
+<li>custom_blocks - 显示自定义方块列表</li>
+<li>mods - 显示服务器上的模组列表</li>
+<li>inner_core_network - 显示连接到服务器的玩家列表</li>
+<li>state - 通过运行标识符获取方块状态<blockquote>
+<p>所有命令都需要管理员权限</p>
+</blockquote>
+<h2 id="技术信息"><a href="#技术信息" class="headerlink" title="技术信息"></a>技术信息</h2><table>
+<thead>
+<tr>
+<th align="center">Key</th>
+<th align="center">Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Protocol version</td>
+<td align="center">422 (1.16.200)</td>
+</tr>
+<tr>
+<td align="center">Apparatus Commit</td>
+<td align="center"><code>73194cfd</code></td>
+</tr>
+<tr>
+<td align="center">Instant Referrer Commit</td>
+<td align="center"><code>a264591</code></td>
+</tr>
+<tr>
+<td align="center">Nukkit-MOT Commit</td>
+<td align="center"><code>2b53fb5</code></td>
+</tr>
+</tbody></table>
+<h1 id="开服流程"><a href="#开服流程" class="headerlink" title="开服流程"></a>开服流程</h1></li>
+</ul>
+<p><em>图文流程待补充</em><br>首先在设备上安装好 Java，然后去 <a target="_blank" rel="noopener" href="https://github.com/Reider745/ZoteCoreLoader/releases">Releases</a> 中下载最新版本的 ZoteCore，之后在一个空文件夹中（非硬性要求，只是这样方便些）按照上文介绍中的安装方式安装即可。<br>客户端应为最新的 <strong>Inner Core Test</strong> 包，Horizon版本建议使用<code>1.2.0-beta</code>。<br>此外，客户端还需安装 <a target="_blank" rel="noopener" href="https://icmods.mineprogramming.org/mod?id=927">ServerFixed</a> 模组，对于客户端模组（client only)，只需要在客户端安装即可，否则则需要客户端与服务端均安装，服务端安装模组的方式为 <a href="https://weifeng233.github.io/2022/01/01/%E6%A8%A1%E7%BB%84%E9%9B%86/">模组集</a> 放在与服务器核心同级的<code>modpack</code>文件夹中即可。<br>可以参考现有的两个服务器，即 <a target="_blank" rel="noopener" href="https://icmods.mineprogramming.org/mod?id=930">Zote Echoes</a> 和<a target="_blank" rel="noopener" href="https://icmods.mineprogramming.org/mod?id=928">Tech Server</a>。</p>
 
       
     </div>
@@ -287,7 +329,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://weifeng233.github.io/2021/08/29/%E4%BD%BF%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E7%9A%84MCBE%E5%8F%B2%E8%8E%B1%E5%A7%86%E5%8C%BA%E5%9D%97%E7%AE%97%E6%B3%95/" title="使用JavaScript实现的MCBE史莱姆区块算法" target="_blank" rel="external">https://weifeng233.github.io/2021/08/29/使用JavaScript实现的MCBE史莱姆区块算法/</a>
+      <a href="https://weifeng233.github.io/2024/01/18/zote-core-loader/" title="InnerCore 第三方服务端 Zote Core 介绍" target="_blank" rel="external">https://weifeng233.github.io/2024/01/18/zote-core-loader/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -334,12 +376,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2022/01/01/%E6%A8%A1%E7%BB%84%E9%9B%86/" title="模组集"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2024/02/17/%E5%8D%8A%E5%B0%8F%E6%97%B6%E9%80%9F%E9%80%9ARust/" title="半小时速通Rust"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2021/08/14/UI-2/" title="UI PART2"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2023/06/09/%E9%A6%99%E8%8D%89%E9%A3%8E%E6%A0%BC%E6%A8%A1%E7%BB%84%E6%8C%87%E5%8D%97/" title="香草风格模组指南"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
